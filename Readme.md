@@ -3,6 +3,11 @@ Delegator2
 
 > 基于jQuery的事件代理方案
 
+姐妹项目
+-------
+
+> https://github.com/QQEDU/delegator
+
 入门
 -----
 
@@ -59,9 +64,9 @@ Delegator2
 ```javascript
 // 分别设置msg1和msg2
 // 实际上set方法支持只传value
-// 这时候会返回唯一的key，可以里这个特性来优化模版
+// 这时候会返回唯一的key，可以用这个特性来优化模版数据绑定
 Delegator.set('msg1', 'hello world');
-Delegator.set('msg1', 'hello Tecent');
+Delegator.set('msg2', 'hello Tecent');
 
 (new Delegator('#delegator-container'))
     .on('click', 'showAlert', function (e, msg) {
