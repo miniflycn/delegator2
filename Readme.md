@@ -66,7 +66,7 @@ Delegator2
 // 实际上set方法支持只传value
 // 这时候会返回唯一的key，可以用这个特性来优化模版数据绑定
 Delegator.set('#delegator-container>p:eq(0)', 'hello world');
-Delegator.set('#delegator-container>p:eq(1)', 'hello Tecent');
+        .set('#delegator-container>p:eq(1)', 'hello Tecent');
 
 (new Delegator('#delegator-container'))
     .on('click', 'showAlert', function (e, msg) {
