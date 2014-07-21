@@ -56,8 +56,8 @@ Delegator2
 可以将参数传入其中方法，例如：
 ```html
 <div id="delegator-container">
-<p data-event-click="showAlert" data-event-data="msg1">点击我弹出hello world</p>
-<p data-event-click="showAlert" data-event-data="msg2">点击我弹出hello Tecent</p>
+<p data-event-click="showAlert">点击我弹出hello world</p>
+<p data-event-click="showAlert">点击我弹出hello Tecent</p>
 </div>
 ```
 
@@ -65,8 +65,8 @@ Delegator2
 // 分别设置msg1和msg2
 // 实际上set方法支持只传value
 // 这时候会返回唯一的key，可以用这个特性来优化模版数据绑定
-Delegator.set('msg1', 'hello world');
-Delegator.set('msg2', 'hello Tecent');
+Delegator.set('#delegator-container>p:eq(0)', 'hello world');
+Delegator.set('#delegator-container>p:eq(1)', 'hello Tecent');
 
 (new Delegator('#delegator-container'))
     .on('click', 'showAlert', function (e, msg) {
@@ -103,7 +103,7 @@ $([
 ```
 
 ```javascript
-Delegator.set('msg', {
+Delegator.set('#delegator-container > p', {
     msg: 'hello world',
     log: 'hello Tencent'
 })

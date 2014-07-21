@@ -64,13 +64,17 @@
     };
 
     var cache = new Map(), set = cache.set, uid = 0;
-    cache.set = function (key, value) {
+    cache.set = function (node, value) {
         if (!value) {
-            value = key;
-            key = ++uid + '';
+            value = node;
+            set.call(cache, ++uid + '', value);
+            return uid;
+        } else {
+            typeof node === 'string' &&
+                (node = $(node)[0]);
+            $.data(node, 'event-data', value);
+            return this;
         }
-        set.call(cache, key, value);
-        return key;
     };
 
     function _key(arr) {
