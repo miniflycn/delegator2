@@ -78,6 +78,8 @@
     };
 
     function _key(arr) {
+        if (!arr) return {};
+        arr = arr.split(' ');
         var obj = {};
         for (var i = 0, l = arr.length; i < l; i++) {
             obj[arr[i]] = true;
@@ -129,7 +131,7 @@
                                 (data['event-data'] = eventData) &&
                                     (cache.remove(dataKey));
                     !data['event-stop-propagation'] &&
-                        (data['event-stop-propagation'] = _key(this.getAttribute('event-stop-propagation') || []));
+                        (data['event-stop-propagation'] = _key(this.getAttribute('data-event-stop-propagation')));
                 }
 
                 if (routes) {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+<div id="mocha"></div>
+
+<div id="container" style="display: none;">
+<ul>
+    <li data-event-click="mind" id="test1">click</li>
+</ul>
+<ul data-event-click="mind">
+    <li data-event-click="mind" id="test4">click</li>
+    <li data-event-click="mind" data-event-stop-propagation="click" id="test5">click</li>
+</ul>
+</div>
+
+<div id="container2" style="display: none;">
+</div>
+
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../delegator.js"></script>
+<script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+</script>
+<script src="main.js"></script>
+<script>
+    setTimeout(function () {
+        mocha.run();
+    }, 0);
+</script>
+</body>
