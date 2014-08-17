@@ -26,7 +26,9 @@ describe('delegator', function () {
     it('should send msg to handle', function (done) {
         $('#container2').html([
             '<ul>',
-            '<li data-event-click="send" data-event-data="' + Delegator.set('hello') + '" id="test2"></li>',
+            '<li data-event-click="send" data-event-data="' + Delegator.set('hello') + '">',
+            '<button id="test2"></button>',
+            '</li>',
             '</ul>'
         ].join(''));
         sendCallback.set(function (e, data) {
@@ -42,7 +44,9 @@ describe('delegator', function () {
         }
         $('#container2').html([
             '<ul>',
-            '<li data-event-click="send" data-event-data="' + Delegator.set(_data) + '" id="test3"></li>',
+            '<li data-event-click="send" data-event-data="' + Delegator.set(_data) + '">',
+            '<button id="test3"></button>',
+            '</li>',
             '</ul>'
         ].join(''));
         sendCallback.set(function (e, data) {

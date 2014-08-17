@@ -1,5 +1,6 @@
 Delegator2
 ==========
+[![Build Status](https://travis-ci.org/QQEDU/delegator2.svg?branch=master)](https://travis-ci.org/QQEDU/delegator2)
 
 > 基于jQuery的事件代理方案
 

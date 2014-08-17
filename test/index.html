@@ -10,11 +10,17 @@
 
 <div id="container" style="display: none;">
 <ul>
-    <li data-event-click="mind" id="test1">click</li>
+    <li data-event-click="mind">
+        <button id="test1">click</button>
+    </li>
 </ul>
 <ul data-event-click="mind">
-    <li data-event-click="mind" id="test4">click</li>
-    <li data-event-click="mind" data-event-stop-propagation="click" id="test5">click</li>
+    <li data-event-click="mind">
+        <button id="test4">click</button>
+    </li>
+    <li data-event-click="mind" data-event-stop-propagation="click">
+        <button id="test5">click</button>
+    </li>
 </ul>
 </div>
 
@@ -33,7 +39,11 @@
 <script src="main.js"></script>
 <script>
     setTimeout(function () {
-        mocha.run();
+        if (window.mochaPhantomJS) {
+            mochaPhantomJS.run();
+        } else {
+            mocha.run();
+        }
     }, 0);
 </script>
 </body>

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": ""
+    "test": "grunt report"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "chai": "*",
     "jquery": "^1.9.1",
-    "mocha": "*"
+    "mocha": "*",
+    "grunt-mocha-phantomjs": "~0.6.0"
   }
 }
